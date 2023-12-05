@@ -62,7 +62,14 @@ function BookingDetail() {
           Back
         </Button>
         {status === "checked-in" && (
-          <Button disabled={isCheckingout} onClick={() => checkout(id)}>
+          <Button
+            disabled={isCheckingout}
+            onClick={() =>
+              checkout(id, {
+                onSettled: () => navigate(-1),
+              })
+            }
+          >
             <HiArrowUpOnSquare />
             check out
           </Button>
