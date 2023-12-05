@@ -126,12 +126,13 @@ function Button({ children, icon, onClick }) {
   }
 
   return (
-    <li>
+    ///Li
+    <div>
       <StyledButton onClick={handleClick}>
         {icon}
         <span>{children}</span>
       </StyledButton>
-    </li>
+    </div>
   );
 }
 

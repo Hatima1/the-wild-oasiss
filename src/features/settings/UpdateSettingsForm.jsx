@@ -2,7 +2,7 @@ import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import Spinner from "../../ui/Spinner";
-import { Usesetting } from "./Usesettings";
+import { Usesettings } from "./Usesettings";
 import { UseUpdateSetting } from "./useUpdateSetting";
 
 export function UpdateSettingsForm() {
@@ -15,7 +15,7 @@ export function UpdateSettingsForm() {
       breakfastPrice,
     } = {},
     error,
-  } = Usesetting();
+  } = Usesettings();
   const { isUpdating, updateSetting } = UseUpdateSetting();
   if (isLoading) <Spinner />;
 
@@ -60,7 +60,7 @@ export function UpdateSettingsForm() {
           id="breakfast-price"
           defaultValue={breakfastPrice}
           disabled={isUpdating}
-          onBlur={(e) => handlerblur(e, "minBookinmaxBookingLengthgLength")}
+          onBlur={(e) => handlerblur(e, "breakfastPrice")}
         />
       </FormRow>
     </Form>

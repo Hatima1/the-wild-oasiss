@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getSettings } from "../../services/apiSettings";
 
-export function Usesetting() {
+export function Usesettings() {
   const {
     data: setting,
     erroe,

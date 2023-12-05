@@ -41,6 +41,7 @@ function Filter({ filterField, options }) {
 
   function handlerClick(value) {
     serchPrams.set(filterField, value);
+    if (serchPrams.get("page")) serchPrams.set("page", 1);
     setSerchPrams(serchPrams);
   }
   return (
