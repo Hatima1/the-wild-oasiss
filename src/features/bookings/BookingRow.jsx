@@ -10,9 +10,9 @@ import { formatCurrency } from "../../utils/helpers";
 
 import { formatDistanceFromNow } from "../../utils/helpers";
 import { HiArrowDownOnSquare, HiArrowUpOnSquare, HiEye } from "react-icons/hi2";
-import Menus from "../../ui/Menus";
+
 import { useNavigate } from "react-router-dom";
-import { useCheckout } from "../check-in-out/useCheckout copy";
+import { useCheckout } from "../check-in-out/useCheckout";
 import { UseDeleteBoking } from "./UseDeleteCabin";
 
 const StyledButton = styled.button`

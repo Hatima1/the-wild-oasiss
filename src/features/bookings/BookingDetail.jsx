@@ -13,7 +13,7 @@ import { useMoveBack } from "../../hooks/useMoveBack";
 import Usebooking from "./UseBooking";
 import { useNavigate } from "react-router-dom";
 import { HiArrowUpOnSquare } from "react-icons/hi2";
-import { useCheckout } from "../check-in-out/useCheckout copy";
+import { useCheckout } from "../check-in-out/useCheckout";
 import DeletCabinModal from "../cabins/DeleteCbinModal";
 import { UseDeleteBoking } from "./UseDeleteCabin";
 
