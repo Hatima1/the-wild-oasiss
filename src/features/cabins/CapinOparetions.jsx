@@ -8,8 +8,8 @@ function capinOparetions() {
         filterField="discount"
         options={[
           { value: "all", label: "all" },
-          { value: "discount", label: "discount" },
-          { value: "nodiscount", label: "nodiscount" },
+          { value: "no-discount", label: "no-discount" },
+          { value: "with-discount", label: "with-discount" },
         ]}
       />
     </TableOperations>
