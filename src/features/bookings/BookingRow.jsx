@@ -14,13 +14,18 @@ import { HiArrowDownOnSquare, HiArrowUpOnSquare, HiEye } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
 import { useCheckout } from "../check-in-out/useCheckout";
 import { UseDeleteBoking } from "./UseDeleteCabin";
+const Div = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2px;
+`;
 
 const StyledButton = styled.button`
   width: 100%;
   text-align: left;
   background: none;
   border: none;
-  padding: 1.2rem 1rem;
+  padding: 0.5rem 0.4rem;
   font-size: 1.4rem;
   transition: all 0.2s;
 
@@ -29,8 +34,9 @@ const StyledButton = styled.button`
   }
 
   & svg {
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1.5rem;
+    height: 1.5rem;
+
     color: var(--color-grey-400);
     transition: all 0.3s;
   }
@@ -45,7 +51,7 @@ const Cabin = styled.div`
 
 const Stacked = styled.div`
   display: flex;
-  flex-direction: column;
+
   gap: 0.2rem;
 
   & span:first-child {
@@ -111,29 +117,29 @@ function BookingRow({
       <Tag type={statusToTagName[status]}>{status.replace("-", " ")}</Tag>
 
       <Amount>{formatCurrency(totalPrice)}</Amount>
-
-      <StyledButton onClick={() => navigate(`/booking/${bookingId}`)}>
-        <HiEye />
-      </StyledButton>
-
-      <DeletCabinModal
-        onConfirm={() => deleteBooking(bookingId)}
-        disabled={isdeleting}
-      />
-
-      {status === "unconfirmed" && (
+      <Div>
         <StyledButton onClick={() => navigate(`/booking/${bookingId}`)}>
-          <HiArrowDownOnSquare />
+          <HiEye />
         </StyledButton>
-      )}
-      {status === "checked-in" && (
-        <StyledButton
-          disabled={isCheckingout}
-          onClick={() => checkout(bookingId)}
-        >
-          <HiArrowUpOnSquare />
-        </StyledButton>
-      )}
+        <DeletCabinModal
+          onConfirm={() => deleteBooking(bookingId)}
+          disabled={isdeleting}
+        />
+
+        {status === "unconfirmed" && (
+          <StyledButton onClick={() => navigate(`/booking/${bookingId}`)}>
+            <HiArrowDownOnSquare />
+          </StyledButton>
+        )}
+        {status === "checked-in" && (
+          <StyledButton
+            disabled={isCheckingout}
+            onClick={() => checkout(bookingId)}
+          >
+            <HiArrowUpOnSquare />
+          </StyledButton>
+        )}
+      </Div>
     </Table.Row>
   );
 }

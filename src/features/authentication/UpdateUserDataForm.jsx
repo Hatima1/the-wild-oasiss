@@ -17,7 +17,6 @@ function UpdateUserDataForm() {
       user_metadata: { fullName: currentFullName },
     },
   } = UseUser();
-  console.log(currentFullName);
   const { isUpdating, updateUser } = useUpdateUser();
   const [fullName, setFullName] = useState(currentFullName);
   const [avatar, setAvatar] = useState(null);

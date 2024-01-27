@@ -48,6 +48,35 @@ const Discount = styled.div`
   font-weight: 500;
   color: var(--color-green-700);
 `;
+const Div = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const StyledButton = styled.button`
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 1.2rem 2.4rem;
+  font-size: 1.4rem;
+  transition: all 0.2s;
+
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  border: none;
+
+  &:hover {
+    background-color: var(--color-grey-50);
+  }
+
+  & svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    color: var(--color-grey-400);
+    transition: all 0.3s;
+  }
+`;
 
 function CabinRow({ cabin }) {
   const [showform, setshowform] = useState(false);
@@ -86,18 +115,20 @@ function CabinRow({ cabin }) {
           <span>&mdash;</span>
         )}
         <div>
-          <button onClick={handleDuplicate} disabled={isCreating}>
-            <HiSquare2Stack />
-          </button>
-          {/* <button onClick={() => setshowform((form) => !form)}>
+          <Div>
+            <StyledButton onClick={handleDuplicate} disabled={isCreating}>
+              <HiSquare2Stack />
+            </StyledButton>
+            {/* <button onClick={() => setshowform((form) => !form)}>
             <HiPencil />
           </button> */}
-          <EditeCabin cabin={cabin} />
+            <EditeCabin cabin={cabin} />
 
-          <DeletCabinModal
-            onConfirm={() => deleteCabin(cabinId)}
-            disabled={isdeleting}
-          />
+            <DeletCabinModal
+              onConfirm={() => deleteCabin(cabinId)}
+              disabled={isdeleting}
+            />
+          </Div>
         </div>
       </TableRow>
       {showform && <CreateCabinForm cabintoedit={cabin} />}

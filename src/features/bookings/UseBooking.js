@@ -5,6 +5,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 function Usebooking() {
   // const { serch } = useSearchParams();
   const { bookingId } = useParams();
+  bookingId.toString();
   console.log(bookingId);
   const {
     isLoading,
